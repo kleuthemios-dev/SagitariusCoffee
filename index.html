@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+>
+
+        name="description"
+        content="SAGI Coffee & Photobox POS"
+    >
+
+    <meta
+        name="theme-color"
+        content="#020617"
+    >
+
+    <title>SAGI Coffee & Photobox</title>
+
+    <link
+        rel="stylesheet"
+        href="./style.css"
+    >
+</head>
+
+
+<body>
+
+    <!-- =========================================
+         SCROLL PROGRESS
+    ========================================== -->
+
+    <div
+        class="scroll-progress"
+        id="scrollProgress"
+    ></div>
+
+
+    <!-- =========================================
+         NAVBAR
+    ========================================== -->
+
+    <header class="navbar">
+
+        <div class="nav-container">
+
+            <a
+                href="#home"
+                class="brand"
+            >
+                SAGI
+                <span>✦</span>
+            </a>
+
+
+            <nav class="nav-links">
+
+                <a href="#home">
+                    Home
+                </a>
+
+                <a href="#menu">
+                    Menu
+                </a>
+
+                <a href="#experience">
+                    Experience
+                </a>
+
+            </nav>
+
+
+            <div class="nav-actions">
+
+                <button
+                    class="history-nav-button"
+                    id="openHistoryButton"
+                    type="button"
+                >
+                    History
+                </button>
+
+
+                <button
+                    class="cart-button"
+                    id="openOrderButton"
+                    type="button"
+                >
+
+                    <span class="cart-text">
+                        Current Order
+                    </span>
+
+                    <span
+                        class="cart-count"
+                        id="cartCount"
+                    >
+                        0
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="menu-toggle"
+                    id="menuToggle"
+                    type="button"
+                    aria-label="Buka navigasi"
+                >
+
+                    <span></span>
+                    <span></span>
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div
+            class="mobile-menu"
+            id="mobileMenu"
+        >
+
+            <a href="#home">
+                Home
+            </a>
+
+            <a href="#menu">
+                Menu
+            </a>
+
+            <a href="#experience">
+                Experience
+            </a>
+
+
+            <button
+                id="mobileHistoryButton"
+                type="button"
+            >
+                Riwayat Transaksi
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================================
+         HERO
+    ========================================== -->
+
+    <main>
+
+        <section
+            class="hero"
+            id="home"
+        >
+
+            <canvas
+                class="star-canvas"
+                id="sagittariusCanvas"
+            ></canvas>
+
+
+            <div class="hero-overlay"></div>
+
+
+            <div class="hero-content">
+
+                <div class="hero-badge">
+
+                    <span></span>
+
+                    SAGI • POINT OF SALE
+
+                </div>
+
+
+                <h1>
+                    SAGI
+                </h1>
+
+
+                <h2>
+
+                    Coffee
+
+                    <em>
+                        & Photobox
+                    </em>
+
+                </h2>
+
+
+                <p class="hero-description">
+
+                    A faster way to serve coffee,
+                    snacks, and good moments.
+
+                </p>
+
+
+                <div class="hero-actions">
+
+                    <a
+                        href="#menu"
+                        class="button primary-button"
+                    >
+
+                        Mulai Pesanan
+
+                        <span>
+                            ↗
+                        </span>
+
+                    </a>
+
+
+                    <button
+                        class="button secondary-button"
+                        id="heroOrderButton"
+                        type="button"
+                    >
+                        Current Order
+                    </button>
+
+                </div>
+
+
+                <div class="hero-stats">
+
+                    <div>
+
+                        <strong>
+                            23
+                        </strong>
+
+                        <span>
+                            MENU
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            4
+                        </strong>
+
+                        <span>
+                            CATEGORIES
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            POS
+                        </strong>
+
+                        <span>
+                            CASHIER MODE
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <div class="sky-transition"></div>
+
+
+
+        <!-- =========================================
+             MENU
+        ========================================== -->
+
+        <section
+            class="menu-section"
+            id="menu"
+        >
+
+            <div class="section-header">
+
+                <div>
+
+                    <p class="section-label">
+                        01 — CASHIER MENU
+                    </p>
+
+
+                    <h2>
+
+                        tap to add,
+
+                        <em>
+                            serve faster.
+                        </em>
+
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div
+                class="filter-container"
+                id="filterContainer"
+            >
+
+                <button
+                    class="filter-button active"
+                    type="button"
+                    data-filter="all"
+                >
+                    All
+                </button>
+
+
+                <button
+                    class="filter-button"
+                    type="button"
+                    data-filter="signature"
+                >
+                    Signature
+                </button>
+
+
+                <button
+                    class="filter-button"
+                    type="button"
+                    data-filter="coffee"
+                >
+                    Coffee
+                </button>
+
+
+                <button
+                    class="filter-button"
+                    type="button"
+                    data-filter="non-coffee"
+                >
+                    Non-Coffee
+                </button>
+
+
+                <button
+                    class="filter-button"
+                    type="button"
+                    data-filter="snack"
+                >
+                    Snack
+                </button>
+
+            </div>
+
+
+            <div
+                class="product-grid"
+                id="productGrid"
+            ></div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             EXPERIENCE
+        ========================================== -->
+
+        <section
+            class="experience-section"
+            id="experience"
+        >
+
+            <div class="experience-card">
+
+                <div class="experience-text">
+
+                    <p class="section-label light">
+                        02 — SAGI MOMENTS
+                    </p>
+
+
+                    <h2>
+
+                        coffee tastes better
+
+                        <em>
+                            with memories.
+                        </em>
+
+                    </h2>
+
+
+                    <p>
+
+                        Serve faster, stay simple,
+                        and leave more room for the
+                        moments that make SAGI special.
+
+                    </p>
+
+                </div>
+
+
+                <div class="photo-stack">
+
+                    <div class="photo photo-one">
+                        slow days.
+                    </div>
+
+                    <div class="photo photo-two">
+                        good coffee.
+                    </div>
+
+                    <div class="photo photo-three">
+                        nice memories.
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer class="footer">
+
+        <div class="footer-container">
+
+            <div>
+
+                <strong>
+                    SAGI
+                </strong>
+
+                <p>
+                    Coffee & Photobox • POS
+                </p>
+
+            </div>
+
+
+            <div class="footer-tags">
+
+                <span>
+                    coffee.
+                </span>
+
+                <span>
+                    stars.
+                </span>
+
+                <span>
+                    memories.
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            SAGI Coffee & Photobox POS
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =========================================
+         DARK OVERLAY
+    ========================================== -->
+
+    <div
+        class="overlay"
+        id="overlay"
+    ></div>
+
+
+
+    <!-- =========================================
+         CURRENT ORDER / POS DRAWER
+    ========================================== -->
+
+    <aside
+        class="order-drawer"
+        id="orderDrawer"
+    >
+
+        <div class="order-header">
+
+            <div>
+
+                <small>
+                    SAGI POS
+                </small>
+
+                <h2>
+                    Current Order
+                </h2>
+
+            </div>
+
+
+            <button
+                class="close-button"
+                id="closeOrderButton"
+                type="button"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+
+        <div
+            class="order-items"
+            id="orderItems"
+        ></div>
+
+
+
+        <div class="cashier-controls">
+
+            <!-- ORDER TYPE -->
+
+            <div class="control-section">
+
+                <span class="control-title">
+                    ORDER TYPE
+                </span>
+
+
+                <div class="option-grid">
+
+                    <label class="option-card">
+
+                        <input
+                            type="radio"
+                            name="orderType"
+                            value="Dine In"
+                            checked
+                        >
+
+                        <span>
+                            Dine In
+                        </span>
+
+                    </label>
+
+
+                    <label class="option-card">
+
+                        <input
+                            type="radio"
+                            name="orderType"
+                            value="Takeaway"
+                        >
+
+                        <span>
+                            Takeaway
+                        </span>
+
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <!-- NOTES -->
+
+            <div class="control-section">
+
+                <label
+                    class="control-title"
+                    for="orderNotes"
+                >
+                    CATATAN
+                </label>
+
+
+                <textarea
+                    id="orderNotes"
+                    class="order-notes"
+                    rows="3"
+                    placeholder="Contoh: less ice, tanpa gula..."
+                ></textarea>
+
+            </div>
+
+
+            <!-- PAYMENT -->
+
+            <div class="control-section">
+
+                <span class="control-title">
+                    PAYMENT
+                </span>
+
+
+                <div class="option-grid">
+
+                    <label class="option-card">
+
+                        <input
+                            type="radio"
+                            name="paymentMethod"
+                            value="Cash"
+                            checked
+                        >
+
+                        <span>
+                            Cash
+                        </span>
+
+                    </label>
+
+
+                    <label class="option-card">
+
+                        <input
+                            type="radio"
+                            name="paymentMethod"
+                            value="QRIS"
+                        >
+
+                        <span>
+                            QRIS
+                        </span>
+
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <!-- CASH -->
+
+            <div
+                class="cash-payment"
+                id="cashPaymentSection"
+            >
+
+                <label for="cashReceived">
+                    Uang Diterima
+                </label>
+
+
+                <div class="money-input">
+
+                    <span>
+                        Rp
+                    </span>
+
+                    <input
+                        id="cashReceived"
+                        type="number"
+                        min="0"
+                        step="1000"
+                        placeholder="0"
+                    >
+
+                </div>
+
+
+                <div class="quick-cash">
+
+                    <button
+                        type="button"
+                        data-cash="exact"
+                    >
+                        Uang Pas
+                    </button>
+
+                    <button
+                        type="button"
+                        data-cash="50000"
+                    >
+                        50K
+                    </button>
+
+                    <button
+                        type="button"
+                        data-cash="100000"
+                    >
+                        100K
+                    </button>
+
+                    <button
+                        type="button"
+                        data-cash="200000"
+                    >
+                        200K
+                    </button>
+
+                </div>
+
+
+                <div class="change-row">
+
+                    <span>
+                        Kembalian
+                    </span>
+
+                    <strong id="changeAmount">
+                        Rp0
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="order-footer">
+
+            <div class="order-total">
+
+                <span>
+                    TOTAL
+                </span>
+
+                <strong id="orderTotal">
+                    Rp0
+                </strong>
+
+            </div>
+
+
+            <p
+                class="cashier-error"
+                id="cashierError"
+            ></p>
+
+
+            <button
+                class="pay-button"
+                id="confirmPaymentButton"
+                type="button"
+            >
+
+                <span>
+                    Konfirmasi Pembayaran
+                </span>
+
+                <span>
+                    →
+                </span>
+
+            </button>
+
+
+            <button
+                class="clear-order-button"
+                id="clearOrderButton"
+                type="button"
+            >
+                Kosongkan Pesanan
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =========================================
+         HISTORY MODAL
+    ========================================== -->
+
+    <div
+        class="modal"
+        id="historyModal"
+    >
+
+        <div class="history-panel">
+
+            <div class="modal-header">
+
+    <div>
+
+        <p class="section-label">
+            SAGI POS
+        </p>
+
+        <h2>
+            Riwayat Penjualan
+        </h2>
+
+    </div>
+
+
+        <div class="history-header-actions">
+
+                 <button
+                 class="reset-history-button"
+                 id="resetHistoryButton"
+                 type="button"
+               >
+                 Reset History
+            </button>
+
+
+            <button
+                 class="close-button"
+                 id="closeHistoryButton"
+                 type="button"
+               >
+                 ×
+            </button>
+
+        </div>
+
+    </div>
+
+
+            <div class="history-stats">
+
+                <div>
+
+                    <span>
+                        TRANSAKSI HARI INI
+                    </span>
+
+                    <strong id="todayTransactionCount">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        PENDAPATAN HARI INI
+                    </span>
+
+                    <strong id="todayRevenue">
+                        Rp0
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        TOTAL TRANSAKSI
+                    </span>
+
+                    <strong id="allTransactionCount">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div
+                class="history-list"
+                id="historyList"
+            ></div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================================
+         RECEIPT MODAL
+    ========================================== -->
+
+    <div
+        class="modal"
+        id="receiptModal"
+    >
+
+        <div class="receipt-panel">
+
+            <div class="receipt-success">
+                ✓
+            </div>
+
+
+            <p class="receipt-label">
+                PAYMENT SUCCESS
+            </p>
+
+
+            <h2>
+                Pesanan berhasil dibayar
+            </h2>
+
+
+            <div class="receipt-box">
+
+                <div class="receipt-info">
+
+                    <span>
+                        Order ID
+                    </span>
+
+                    <strong id="receiptOrderId">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="receipt-info">
+
+                    <span>
+                        Order Type
+                    </span>
+
+                    <strong id="receiptOrderType">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="receipt-info">
+
+                    <span>
+                        Payment
+                    </span>
+
+                    <strong id="receiptPayment">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div
+                    class="receipt-items"
+                    id="receiptItems"
+                ></div>
+
+
+                <div class="receipt-total">
+
+                    <span>
+                        Total
+                    </span>
+
+                    <strong id="receiptTotal">
+                        Rp0
+                    </strong>
+
+                </div>
+
+
+                <div
+                    class="receipt-info"
+                    id="receiptCashRow"
+                >
+
+                    <span>
+                        Uang Diterima
+                    </span>
+
+                    <strong id="receiptCash">
+                        Rp0
+                    </strong>
+
+                </div>
+
+
+                <div
+                    class="receipt-info"
+                    id="receiptChangeRow"
+                >
+
+                    <span>
+                        Kembalian
+                    </span>
+
+                    <strong id="receiptChange">
+                        Rp0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="new-order-button"
+                id="newOrderButton"
+                type="button"
+            >
+                Pesanan Baru
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================================
+         TOAST
+    ========================================== -->
+
+    <div
+        class="toast"
+        id="toast"
+    >
+
+        <span class="toast-star">
+            ✦
+        </span>
+
+        <span id="toastMessage">
+            Menu ditambahkan
+        </span>
+
+    </div>
+
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script
+        src="./script.js"
+        defer
+    ></script>
+
+    
+
+</body>
+
+</html>
